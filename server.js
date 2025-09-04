@@ -433,14 +433,7 @@ io.on('connection', (socket) => {
 });
 
 const PORT = process.env.PORT || 3000;
-
-// Cho Vercel deployment
-if (process.env.NODE_ENV !== 'production') {
-  server.listen(PORT, () => {
-    console.log(`Server đang chạy trên port ${PORT}`);
-    console.log(`Truy cập ứng dụng tại: http://localhost:${PORT}`);
-  });
-}
-
-// Export cho Vercel
-module.exports = app;
+server.listen(PORT, () => {
+  console.log(`Server đang chạy trên port ${PORT}`);
+  console.log(`Truy cập ứng dụng tại: http://localhost:${PORT}`);
+});
